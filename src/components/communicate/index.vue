@@ -34,6 +34,7 @@ export default {
   methods: {
     getmsg(msg){
       this.msg = msg
+      console.log(this.msg)
     }
   },
   components: {

@@ -3,6 +3,7 @@
     <h2>child1</h2>
     <p>{{title}}</p>
     <h3>{{msg}}</h3>
+    <button @click="toParent">传递到父元素</button>
   </div>
 </template>
 
