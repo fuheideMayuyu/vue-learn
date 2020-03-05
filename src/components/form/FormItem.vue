@@ -2,7 +2,7 @@
   <div>
     <label v-if="label">{{label}}</label>
     <slot></slot>
-    <p v-if="errorMessage">{{errorMessage}}</p>
+    <p v-if="errorMessage" style="color: red">{{errorMessage}}</p>
   </div>
 </template>
 
@@ -38,10 +38,11 @@ export default {
     // 执行校验
     validate(){
       // 获取input的值（动态变化）
-      // [this.prop] es6计算属性用法
-      const value = this.form.model[this.prop]
+      // [this.prop] es6计算属性用法  ["password"] ["username"]
+      const value = this.form.model[this.prop] || ''
       // input 校验规则
       const rules = this.form.rules[this.prop]
+      
       const desc = {[this.prop]: rules};
       const schema = new Schema(desc);
       // return 校验结果的promise对象

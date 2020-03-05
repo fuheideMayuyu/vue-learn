@@ -36,7 +36,11 @@ export default {
       // 该方法返回一个promise的数组
       const tasks = this.$children
       .filter(item => item.prop) // 过滤出需要校验的属性
-      .map(item => item.validate())
+      .map(item => {
+        console.log('item', item.validate)
+        item.validate()
+        } )
+      
       // 所有任务都通过才算校验通过
       Promise.all(tasks)
       .then(() => cb(true)) // 校验成功

@@ -31,16 +31,27 @@ export default {
     KInput
   },
   data() {
+
+     var validatePass = (rule, value, callback) => {
+       if (value == 123) {
+         callback(new Error('触发校验方法'));
+        // console.log('触发校验方法', callback(new Error('触发校验方法')))
+        } else {
+          callback();
+        }
+      };
     return {
       model: { username: "", password: "" },
       rules: {
-        username: [{ required: true, message: "请输入用户名" }],
-        password: [{ required: true, message: "请输入密码" }]
+        username: [{ required: true, message: "请输入用户名", trigger: 'change'}],
+        password: [{ required: true, message: "请输入密码" , validator: validatePass,}]
+        // password: [{ required: true, message: "请输入密码" }]
       }
     };
   },
   methods: {
     submitForm(form) {
+      
       this.$refs[form].validate(valid => {
         // const notice = this.$create(Notice, {
         //   title: "社会你杨哥喊你来搬砖",
@@ -49,11 +60,11 @@ export default {
         // });
         // notice.show();
         console.log(valid)
-        if(valid){
-          alert("请求登录！")
-        } else {
-          alert('校验失败！')
-        }
+        // if(valid){
+        //   console.log('校验成功')
+        // } else {
+        //   console.log('校验失败')
+        // }
       });
     }
   }
