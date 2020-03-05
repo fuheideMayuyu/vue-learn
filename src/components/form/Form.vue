@@ -37,7 +37,7 @@ export default {
       const tasks = this.$children
       .filter(item => item.prop) // 过滤出需要校验的属性
       .map(item => {
-        console.log('item', item.validate)
+     
         item.validate()
         } )
       

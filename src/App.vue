@@ -3,8 +3,8 @@
     <!-- <CompCommunicate></CompCommunicate>
     <SlotsTest></SlotsTest>
     <Recursion></Recursion> -->
-    <FormSample></FormSample>
-    <!-- <Tree></Tree> -->
+    <!-- <FormSample></FormSample> -->
+    <Tree></Tree>
   </div>
 </template>
 
@@ -12,8 +12,8 @@
 // import CompCommunicate from '@/components/communicate/index.vue'
 // import SlotsTest from './components/SlotsTest'
 // import Recursion from './components/Recursion'
-import FormSample from '@/components/form'
-// import Tree from './components/Tree'
+// import FormSample from '@/components/form'
+import Tree from '@/components/tree/index.vue'
 
 export default {
   name: 'App',
@@ -21,8 +21,8 @@ export default {
     // CompCommunicate,
     // SlotsTest,
     // Recursion,
-    FormSample,
-    // Tree
+    // FormSample,
+    Tree
   }
 }
 </script>
