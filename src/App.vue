@@ -12,7 +12,7 @@
 // import CompCommunicate from '@/components/communicate/index.vue'
 // import SlotsTest from './components/SlotsTest'
 // import Recursion from './components/Recursion'
-// import FormSample from '@/components/form'
+
 import Tree from '@/components/tree/index.vue'
 
 export default {
